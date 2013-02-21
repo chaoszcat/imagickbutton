@@ -5,16 +5,16 @@ A beautifully PHP rendered button using Imagick extension.
 
 __Why__
 
-In the email world, creating beautiful buttons is always pain in the a**. To overcome this,
+In the email world, creating beautiful buttons is always a pain in the a**. To overcome this,
 email templates usually uses css buttons with image fallback. This is fine if your template
-is fixed and not much variations. What if you are a developer that need to generate dynamic
+is fixed and with not much variations. But what if you are a developer that need to generate dynamic
 buttons?
 
 __GD/Imagick__
 
 That's why I created this script for those who wanted to create dynamic yet beautiful buttons
 in PHP. The only hard requirement here is Imagick extension. GD is too tedious to do such
-task. Two lines and you will get a beautifully rendered button.
+task. Fret not, two lines and you are done.
 
 
 Requirements
