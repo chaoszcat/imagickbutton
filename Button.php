@@ -73,6 +73,24 @@ class Button {
 		$this->font($this->font());
 	}
 	
+	private function setProp($k, $v) {
+		if (isset($this->properties[$k])) {
+			
+			//Normalize colors
+			if (in_array($k, array('fontColor', 'buttonColor', 'backgroundColor'))) {
+				if ($v[0] != '#') {
+					$v = '#'.$v;
+				}
+			}
+			
+			$this->properties[$k] = $v;
+		}
+	}
+	
+	private function getProp($k) {
+		return isset($this->properties[$k]) ? $this->properties[$k] : null;
+	}
+	
 	/**
 	 * For get/set properties
 	 * 
@@ -82,14 +100,10 @@ class Button {
 	 */
 	public function __call($name, $arguments) {
 		if (empty($arguments)) {
-			if (isset($this->properties[$name])) {
-				return $this->properties[$name];
-			}else{
-				return null;
-			}
+			return $this->getProp($name);
 		}else{
 			//attempt to set prop
-			$this->properties[$name] = $arguments[0];
+			$this->setProp($name);
 			return $this;
 		}
 	}
@@ -234,6 +248,27 @@ class Button {
 			if ($color[$i] < 0) $color[$i] = 0;
 		}
 		return $this->rgb2hex($color);
+	}
+	
+	/**
+	 * Read the $_GET parameters of the whitelisted fields
+	 * @param array $whitelist a list of whitelisted properties
+	 */
+	public function readGET($whitelist=array()) {
+		
+		if (is_string($whitelist)) {
+			$whitelist = str_replace(' ', '', $whitelist);
+			$whitelisted_properties = explode(',', $whitelist);
+		}else{
+			$whitelisted_properties = $whitelist;
+		}
+		
+		foreach($whitelisted_properties as $k) {
+			if (isset($_GET[$k])) {
+				$this->setProp($k, $_GET[$k]);
+			}
+		}
+		return $this;
 	}
 	
 	/**

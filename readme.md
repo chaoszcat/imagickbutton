@@ -97,6 +97,11 @@ A orange (Default color) button with no glossy effect
            ->text('Click Here')
            ->draw();
 
+To read $_GET automatically, use `readGET`. Pass an array of whitelisted $_GET keys in CSV form
+
+    $button->readGET(array('width', 'height', 'buttonColor', 'fontColor'))
+           ->draw();
+
 To draw into a file instead, call this
 
     $button->draw('path/to/the/file');
