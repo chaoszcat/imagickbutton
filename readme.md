@@ -59,10 +59,10 @@ These are the default properties in the Button class.
 	private $properties = array(
 		'width' => 140,
 		'height' => 40,
-		'buttonColor' => '#ff6600', //Button face color
+		'buttonColor' => '#ff6600',     //Button face color
 		'fontColor' => '#ffffff',
 		'fontSize' => 18,
-		'font' => 'arial.ttf',
+		'font' => 'arial.ttf',          //font use. Drop your font into the font folder
 		'text' => 'Hello World',
 		'noText' => false,
 		'backgroundColor' => '#ffffff', //Background color. We do not support transparency here
