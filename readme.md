@@ -12,9 +12,16 @@ PHP 5.3 and Imagick extension installed
 
 Examples
 --------
+Orange (Glossy)
 ![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/orange_glossy.gif)
+
+Orange (Matte)
 ![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/orange.gif)
+
+Blue
 ![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/blue.gif)
+
+Green
 ![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/green.gif)
 
 Quick Start
