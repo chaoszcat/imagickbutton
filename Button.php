@@ -68,6 +68,13 @@ class Button {
 	
 	private $fontdir = 'font';
 	
+	/**
+	 * We don't want someone to mess with the system so
+	 * set a maximum dimension
+	 */
+	private $maxWidth = 800;
+	private $maxHeight = 400;
+	
 	public function __construct() {
 		$this->here = dirname(__FILE__);
 		$this->font($this->font());
@@ -278,6 +285,15 @@ class Button {
 		
 		//Start the fun!
 		$this->final = new Imagick();
+		
+		//We want to block button which is ridiculously big
+		if ($this->width() > $this->maxWidth) {
+			$this->width($this->maxWidth);
+		}
+		if ($this->height() > $this->maxHeight) {
+			$this->height($this->maxHeight);
+		}
+		
 		$this->final->newImage($this->width(), $this->height(), $this->backgroundColor(), $this->imageType());
 		
 		$this->doGradient();
