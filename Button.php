@@ -72,8 +72,8 @@ class Button {
 	 * We don't want someone to mess with the system so
 	 * set a maximum dimension
 	 */
-	private $maxWidth = 800;
-	private $maxHeight = 400;
+	private $maxWidth = 600;
+	private $maxHeight = 200;
 	
 	public function __construct() {
 		$this->here = dirname(__FILE__);
@@ -110,7 +110,7 @@ class Button {
 			return $this->getProp($name);
 		}else{
 			//attempt to set prop
-			$this->setProp($name);
+			$this->setProp($name, $arguments[0]);
 			return $this;
 		}
 	}
@@ -290,6 +290,7 @@ class Button {
 		if ($this->width() > $this->maxWidth) {
 			$this->width($this->maxWidth);
 		}
+		
 		if ($this->height() > $this->maxHeight) {
 			$this->height($this->maxHeight);
 		}
