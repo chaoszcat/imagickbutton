@@ -66,9 +66,11 @@ class Button {
 		'strokeColor' => null
 	);
 	
+	private $fontdir = 'font';
+	
 	public function __construct() {
 		$this->here = dirname(__FILE__);
-		$this->font($this->here.'/font/arial.ttf');
+		$this->font($this->font());
 	}
 	
 	/**
@@ -89,6 +91,29 @@ class Button {
 			//attempt to set prop
 			$this->properties[$name] = $arguments[0];
 			return $this;
+		}
+	}
+	
+	/**
+	 * Set font path. If this path found, use it. If not, look for it in font
+	 * folder instead
+	 * @param type $path
+	 */
+	public function font($path=null) {
+		
+		if (empty($path)) {
+			return $this->properties['font'];
+		}
+		
+		if (is_file($path)) {
+			$this->properties['font'] = $path;
+		}else{
+			$path = $this->here.'/'.$this->fontdir.'/'.$path;
+			if (is_file($path)) {
+				$this->properties['font'] = $path;
+			}else{
+				$this->font('arial.ttf');
+			}
 		}
 	}
 	
