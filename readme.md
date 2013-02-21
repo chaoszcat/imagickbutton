@@ -12,7 +12,10 @@ PHP 5.3 and Imagick extension installed
 
 Examples
 --------
-
+![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/orange_glossy.gif)
+![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/orange.gif)
+![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/blue.gif)
+![ScreenShot](https://raw.github.com/chaoszcat/imagickbutton/master/demo/green.gif)
 
 Quick Start
 -----------
