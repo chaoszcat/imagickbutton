@@ -149,13 +149,13 @@ class Button {
 			$endColor = $this->endColor();
 		}else{
 			$startColor = $this->buttonColor();
-			$endColor = $this->darken($startColor);
+			$endColor = $this->darken($startColor, 50);
 		}
 		
 		if ($this->strokeColor()) {
 			$strokeColor = $this->strokeColor();
 		}else{
-			$strokeColor = $this->darken($endColor);
+			$strokeColor = $this->darken($endColor, 10);
 		}
 		
 		$pattern->newpseudoimage(2, $this->height(), "gradient:{$startColor}-{$endColor}");
@@ -247,7 +247,7 @@ class Button {
 	 * @param type $color
 	 * @return hex string
 	 */
-	private function darken($color, $steps=30) {
+	private function darken($color, $steps=10) {
 		//Convert string color #xxxxxx to rgb first
 		if (is_string($color)) $color = $this->hex2rgb($color);
 		for ($i = 0 ; $i < 3 ; $i++) {
